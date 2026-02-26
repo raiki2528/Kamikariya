@@ -5,8 +5,8 @@ const urlsToCache = [
     '/index.html',
     '/styles.css',
     '/script.js',
-    '/icon copy.jpeg',
-    '/background copy.jpeg',
+    '/IMG_7691.jpeg',
+    '/IMG_7694.jpeg',
     '/manifest.json'
 ];
 
@@ -60,8 +60,8 @@ function doBackgroundSync() {
 self.addEventListener('push', function(event) {
     const options = {
         body: event.data ? event.data.text() : '新しい更新があります',
-        icon: '/icon copy.jpeg',
-        badge: '/icon copy.jpeg',
+        icon: '/IMG_7691.jpeg',
+        badge: '/IMG_7691.jpeg',
         vibrate: [100, 50, 100],
         data: {
             dateOfArrival: Date.now(),
@@ -70,7 +70,7 @@ self.addEventListener('push', function(event) {
     };
 
     event.waitUntil(
-        self.registration.showNotification('守永博貴', options)
+        self.registration.showNotification('上假屋 愛', options)
     );
 });
 

@@ -121,13 +121,11 @@ function initSocialLinks() {
 function showContactInfo() {
     const contactInfo = `
 連絡先情報:
-📧 Email: morinaga@fcandm926.com
-📱 Phone: 090-5292-6482
-📷 Instagram: @fcandm.morinaga
-📘 Facebook: 守永博貴
+📧 Email: kamikariya@qreat.co.jp
+📷 Instagram: @megumi_fpdays
     `.trim();
     
-    createCustomModal('守永博貴 - 連絡先情報', contactInfo);
+    createCustomModal('Kamikariya Megumi - 連絡先情報', contactInfo);
 }
 
 // カスタムモーダル作成
@@ -260,7 +258,7 @@ async function downloadContactFromModal() {
         // プロフィール画像をBase64で取得（エラーが発生しても続行）
         let profileImageBase64 = '';
         try {
-            profileImageBase64 = await getImageAsBase64('icon copy.jpeg');
+            profileImageBase64 = await getImageAsBase64('IMG_7691.jpeg');
         } catch (error) {
             console.log('画像取得エラー（続行）:', error);
         }
@@ -268,16 +266,13 @@ async function downloadContactFromModal() {
         // vCardを作成
         let vCardData = `BEGIN:VCARD
 VERSION:3.0
-FN:守永博貴
-N:守永;博貴;;;
-ORG:株式会社FC&M
-TITLE:代表取締役
-EMAIL:morinaga@fcandm926.com
-TEL:09052926482
-URL;TYPE=HOME:https://hiroki-morinaga.vercel.app/
-URL:https://www.instagram.com/fcandm.morinaga
-URL:https://www.facebook.com/profile.php?id=100014048287809
-NOTE:財務コンサルタント・トリプルインカムメソッド開発者`;
+FN:Kamikariya Megumi
+N:Kamikariya;Megumi;;;
+ORG:クリイト株式会社
+TITLE:鹿児島支店
+EMAIL:kamikariya@qreat.co.jp
+URL:https://www.instagram.com/megumi_fpdays?igsh=MWkxdXAyNTNnMmM1dA%3D%3D&utm_source=qr
+NOTE:県内を中心に活動し、ママ目線で“無理しないお金の考え方”を提案。「相談してよかった」と言ってもらえる存在を目指しています。`;
 
         // プロフィール画像がある場合のみ追加
         if (profileImageBase64 && profileImageBase64.length > 0) {
@@ -294,7 +289,7 @@ END:VCARD`;
         
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'Morinaga_Hiroki.vcf'; // 英語ファイル名で問題回避
+        link.download = 'Kamikariya_Megumi.vcf'; // 英語ファイル名で問題回避
         link.style.display = 'none';
         document.body.appendChild(link);
         link.click();
@@ -514,7 +509,7 @@ function initSwipeNavigation() {
     let currentTabIndex = 0;
     
     // タブの順序を定義
-    const tabOrder = ['about', 'activities', 'achievements'];
+    const tabOrder = ['about'];
     
     tabContent.addEventListener('touchstart', function(e) {
         startX = e.touches[0].clientX;
@@ -717,7 +712,7 @@ function showEditInstructions() {
 function showSaveNotification() {
     const notification = document.createElement('div');
     notification.innerHTML = `
-        <div style="position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px; border-radius: 10px; z-index: 1000;">
+        <div style="position: fixed; top: 20px; right: 20px; background: #967259; color: white; padding: 15px; border-radius: 10px; z-index: 1000;">
             <i class="fas fa-check"></i> 変更が保存されました！
         </div>
     `;
@@ -1092,7 +1087,7 @@ document.addEventListener('DOMContentLoaded', function() {
 3. 「ホーム画面に追加」をタップ
 4. 案内に従って追加
 
-追加後は守永博貴さんのプロフィール画像がアイコンとして表示され、「守永博貴」という名前でホーム画面に追加されます。`;
+追加後はKamikariya Megumiさんのプロフィール画像がアイコンとして表示され、「Kamikariya Megumi」という名前でホーム画面に追加されます。`;
         alert(instructions);
         if (saveModal) { 
             saveModal.style.display = 'none'; 
