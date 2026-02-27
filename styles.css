@@ -896,6 +896,16 @@ body {
     position: relative;
 }
 
+.intro-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.intro-list li {
+    padding-left: 0;
+}
+
 .toggle-btn {
     background: rgba(150, 114, 89, 0.1);
     color: #967259;
